@@ -1,0 +1,29 @@
+<html>
+	<body>
+		<form method='post' action="{{url_for ('imageuploadAction')}}" enctype="multipart/form-data">
+			<table>
+				<tr>
+				<td>NAME</td>
+				<td><input type="text" name="name"></td>
+				</tr>
+
+				<tr>
+				<td>FILE</td>
+				<td><input type="file" name="file"></td>
+				</tr>
+
+				<tr>
+				<td></td>
+				<td><input type="submit" value="upload"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+{% if get_flashed_messages() %}
+	{% for msg in get_flashed_messages() %}
+		<script>
+			alert("{{msg}}")
+		</script>
+	{% endfor %}
+{% endif %}
+</html>

@@ -1,0 +1,41 @@
+<html>
+	<body>
+		<form>
+			<table>
+				<tr>
+				<th>NAME</th>
+				<th>ADDRESS</th>
+				<th>GENDER</th>
+				<th>DATE OF BIRTH</th>
+				<th>PHONE NUMBER</th>
+				<th>USERNAME</th>
+				<th>PASSWORD</th>
+				</tr>
+
+				{% for v in user%}
+
+				<tr>
+				<td>{{v.name}}</td>
+				<td>{{v.address}}</td>
+				<td>{{v.gender}}</td>
+				<td>{{v.dob}}</td>
+				<td>{{v.phone}}</td>
+				<td>{{v.username}}</td>
+				<td>{{v.password}}</td>
+				<td><a href="{{url_for ('delete',uid=v.id)}}">DELETE</a></td>
+				<td><a href="{{url_for ('edit',uid=v.id)}}">EDIT</a></td>
+				</tr>
+				
+				{% endfor %}
+				
+			</table>
+		</form>
+	</body>
+{% if get_flashed_messages() %}
+	{% for msg in get_flashed_messages() %}
+		<script>
+			alert("{{msg}}")
+		</script>
+	{% endfor %}
+{% endif %}
+</html>

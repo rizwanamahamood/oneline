@@ -1,0 +1,53 @@
+<html>
+	<body>
+		<form method="post" action="{{url_for ('registerAction')}}">
+			<table>
+				<tr>
+				<td>NAME</td>
+				<td><input type="text" name="name"></td>
+				</tr>
+
+				<tr>
+				<td>ADDRESS</td>
+				<td><textarea name="address" rows="3" coloumns="2"></textarea></td>
+				</tr>
+
+				<tr>
+				<td>GENDER</td>
+				<td><input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female</td>	
+				</tr>
+
+				<tr>
+				<td><DATE OF BIRTH></td>
+				<td><input type="date" name="dob"></td>
+				</tr>
+
+				<tr>
+				<td>PHONE NUMBER</td>
+				<td><input type="text" name="phone"></td>
+				</tr>
+
+				<tr>
+				<td>USERNAME</td>
+				<td><input type="text" name="username"></td>
+				</tr>
+
+				<tr>
+				<td>PASSWORD</td>
+				<td><input type="password" name="password"></td>
+				</tr>
+				
+				<tr>
+				<td></td>
+				<td><input type="submit" value="register"></td>
+				</tr>
+
+			</table>
+		</form>
+	</body>
+{% if msg %}
+	<script>
+		alert("{{msg}}")
+	</script>
+{% endif %}
+</html>
